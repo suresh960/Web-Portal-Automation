@@ -1,1 +1,1 @@
-This is for automation web portal testing
+This is for web portal automation testing
