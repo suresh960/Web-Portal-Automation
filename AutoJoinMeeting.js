@@ -3,6 +3,7 @@ const { Builder, By, until } = require('selenium-webdriver');
 (async function loginTest() {
     let driver = await new Builder().forBrowser('chrome').build();
 
+    // This Code is currently Not Working
     try {
         await driver.get('https://staging-portal.argenie.net/Sessions');
 

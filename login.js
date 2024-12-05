@@ -1,8 +1,8 @@
 const { Builder, By, Key, until } = require('selenium-webdriver');
 
-async function loginTest() {
+async function login() {
     // Replace with your login page URL
-    const loginUrl = 'https://localhost:3000/';
+    const loginUrl = 'http://localhost:3000/';
     const driver = new Builder().forBrowser('chrome').build();
 
     try {
@@ -32,4 +32,4 @@ async function loginTest() {
     }
 }
 
-loginTest();
+login();
