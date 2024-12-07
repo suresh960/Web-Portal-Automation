@@ -5,7 +5,7 @@ async function googleLogin() {
 
     try {
         // Replace with your actual login page URL
-        const loginUrl = 'http://localhost:3000/';
+        const loginUrl = 'https://staging-portal.argenie.net/';
         await driver.get(loginUrl);
 
         // Wait for the Google button to appear

@@ -2,7 +2,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 
 async function login() {
     // Replace with your login page URL
-    const loginUrl = 'http://localhost:3000/';
+    const loginUrl = 'https://staging-portal.argenie.net/';
     const driver = new Builder().forBrowser('chrome').build();
 
     try {
