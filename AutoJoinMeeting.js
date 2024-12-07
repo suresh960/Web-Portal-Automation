@@ -22,7 +22,7 @@ async function autojoinMeeting() {
     const loginUrl = 'https://staging-portal.argenie.net/';
 
     try {
-        // Open the login page
+        // Step 1: Open the login page and Log in to Portal
         await driver.get(loginUrl);
 
         // Locate and fill the username field
@@ -40,11 +40,6 @@ async function autojoinMeeting() {
        // Wait for the next page to load (adjust the selector to a post-login element)
         await driver.wait(until.titleContains('AR Genie Portal'), 5000);
         console.log('Login successful');
-        // } catch (error) {
-        // console.error('Error during Login:', error);
-        // } finally {
-        // Close the browser
-        // await driver.quit();
 
         // Step 2: Navigate to the "My Sessions" page
         console.log("Navigating to 'My Sessions' page...");
@@ -69,9 +64,6 @@ async function autojoinMeeting() {
     } finally {
         // Close the browser
         await driver.quit();
-
-
-
     }
 }
 
