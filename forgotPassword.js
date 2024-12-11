@@ -41,7 +41,7 @@ async function forgotPassword() {
         await backToLoginButton.click();
 
         // Wait for the next page to load (adjust the selector to a post-login element)
-        await driver.wait(until.titleContains('AR Genie Portal'), 5000);
+        await driver.wait(until.urlContains('https://staging-portal.argenie.net/login'), 5000);
         console.log('Successfully sent forgot password link to User and Back to Portal Login Screen');
     } catch (error) {
         console.error('Error during forgot password', error);

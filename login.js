@@ -22,7 +22,7 @@ async function login() {
         await loginButton.click();
 
         // Wait for the next page to load (adjust the selector to a post-login element)
-        await driver.wait(until.titleContains('AR Genie Portal'), 5000);
+        await driver.wait(until.urlContains('https://staging-portal.argenie.net/Sessions'), 5000);
         console.log('Login successful');
     } catch (error) {
         console.error('Error during Login:', error);
