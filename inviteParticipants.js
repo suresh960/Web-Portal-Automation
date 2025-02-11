@@ -3,7 +3,7 @@ const { urlContains } = require('selenium-webdriver/lib/until');
 
 async function inviteParticipants() {
     // Replace with your login page URL
-    const loginUrl = 'https://staging-portal.argenie.net/';
+    const loginUrl = 'https://portal.argenie.ai/';
     const driver = new Builder().forBrowser('chrome').build();
 
     try {
@@ -12,11 +12,11 @@ async function inviteParticipants() {
 
         // Locate and fill the username field
         const usernameField = await driver.findElement(By.id('email')); // Replace 'username' with the actual ID or selector
-        await usernameField.sendKeys('doon@staging.com'); // Replace with your username
+        await usernameField.sendKeys('leotest1624@gmail.com'); // Replace with your username
 
         // Locate and fill the password field
         const passwordField = await driver.findElement(By.id('password')); // Replace 'password' with the actual ID or selector
-        await passwordField.sendKeys('1234567890'); // Replace with your password
+        await passwordField.sendKeys('King@123'); // Replace with your password
 
         // Locate and click the login button
         const loginButton = await driver.findElement(By.css('button[type="submit"]')); // Replace 'loginButton' with the actual ID or selector
@@ -24,7 +24,7 @@ async function inviteParticipants() {
         console.log('login button clicked');
 
        // Wait for the next page to load (adjust the selector to a post-login element)
-        await driver.wait(until.urlContains('https://staging-portal.argenie.net/Sessions'), 5000);
+        await driver.wait(until.urlContains('https://portal.argenie.ai/Sessions'), 5000);
         console.log('Login successful');
 
         // Navigate to the "My Sessions" page
@@ -33,7 +33,7 @@ async function inviteParticipants() {
 
         // Find the invite button
         console.log("Finding the Invite button...");
-        const inviteButton = await driver.wait(until.elementLocated(By.className('MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-vn4aa5')), 10000);
+        const inviteButton = await driver.wait(until.elementLocated(By.className('lucide lucide-user-round-plus')), 10000);
         await inviteButton.click();
 
         // Click the "INVITE" button
@@ -44,17 +44,17 @@ async function inviteParticipants() {
 
         console.log('Finding send sms Button...');
 
-        const sendSmsButton = await driver.wait(until.elementLocated(By.className('MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeSmall css-941tgv')),10000);
+        const sendSmsButton = await driver.wait(until.elementLocated(By.className('lucide lucide-send-horizontal')),10000);
         await sendSmsButton.click();
         console.log('Phone number filled and clicked on the send SMS button successfully')
 
-        await driver.wait(until.urlContains('https://staging-portal.argenie.net/Sessions'),1000);
+        await driver.wait(until.urlContains('https://portal.argenie.ai/Sessions'),1000);
         console.log('Session invitation successfully sent via SMS');
     } catch (error) {
         console.error('Error during Send invitation Link via SMS:', error);
     } finally {
         // Close the browser
-        await driver.quit();
+        // await driver.quit();
     }
 }
 

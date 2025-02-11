@@ -5,7 +5,7 @@ async function microsoftLogin() {
 
     try {
         // Replace with your actual login page URL
-        const loginUrl = 'https://staging-portal.argenie.net/';
+        const loginUrl = 'https://portal.argenie.ai/';
         await driver.get(loginUrl);
 
         // Wait for the Google button to appear
@@ -40,7 +40,7 @@ async function microsoftLogin() {
 
         // Optionally wait for the redirect back to your app
         console.log("Waiting for redirection back to the app...");
-        await driver.wait(until.urlContains('https://staging-portal.argenie.net/'), 10000);
+        await driver.wait(until.urlContains('https://portal.argenie.ai/'), 10000);
 
         console.log("Google login successful!");
     } catch (error) {

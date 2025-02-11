@@ -3,7 +3,7 @@ const { elementsLocated } = require('selenium-webdriver/lib/until');
 
 async function forgotPassword() {
     // Replace with your login page URL
-    const loginUrl = 'https://staging-portal.argenie.net/';
+    const loginUrl = 'https://portal.argenie.ai/';
     const driver = new Builder().forBrowser('chrome').build();
 
     try {
@@ -16,7 +16,7 @@ async function forgotPassword() {
 
         // Locate and fill the password field
         const usernameField = await driver.findElement(By.id('email')); // Replace 'password' with the actual ID or selector
-        await usernameField.sendKeys('realkme12@gmail.com'); // Replace with your password
+        await usernameField.sendKeys('leotest1624@gmail.com'); // Replace with your password
 
         // Locate and click the login button
         const sendForgotlinkButton = await driver.findElement(By.css('button[type="submit"]')); // Replace 'loginButton' with the actual ID or selector
@@ -41,7 +41,7 @@ async function forgotPassword() {
         await backToLoginButton.click();
 
         // Wait for the next page to load (adjust the selector to a post-login element)
-        await driver.wait(until.urlContains('https://staging-portal.argenie.net/login'), 5000);
+        await driver.wait(until.urlContains('https://portal.argenie.ai/login'), 5000);
         console.log('Successfully sent forgot password link to User and Back to Portal Login Screen');
     } catch (error) {
         console.error('Error during forgot password', error);
